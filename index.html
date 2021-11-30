@@ -26,9 +26,9 @@
         <nav class="header-navigation " >
                     <a class="web link" href="./index.html">Web<span class="studio">Studio</span></a>
         <ul class="header-list  list ">
-                <li class="header-left" ><a class="header-item link drc" href="./index.html">Студия</a></li>
-                <li class="header-left" ><a class="header-item link drc" href="./portfolio.html">Портфолио </a></li>
-                <li class="header-left" ><a class="header-item link drc"href="">Контакты </a></li>
+                <li class="header-item" ><a class="header-link link drc current" href="./index.html">Студия</a></li>
+                <li class="header-item" ><a class="header-link link drc" href="./portfolio.html">Портфолио </a></li>
+                <li class="header-item" ><a class="header-link link drc"href="">Контакты </a></li>
         </ul>
         </nav>
             <ul class="header-contact-list list" >
@@ -50,7 +50,7 @@
     <section class="hero">
             <div class="container hero-container">
                     <h2 class="hero-text">Эффективные решения <br> для вашего бизнеса</h2>
-                    <button class="hero-button" type="button">Заказать услугу</button>            
+                    <button class="hero-button" type="button" data-modal-open>Заказать услугу</button>            
             </div>
     </section>
 
@@ -115,10 +115,19 @@
     <section class="procces-photo">
         <div class="container procces-conteiner" >  
             <h2 class="procces">Чем мы занимаемся</h2>
-        <ul class="photo-link list">
-            <li class="work-photo" > <a> <img src="./img/img.box1.png" width="370" alt="Кодировка"> </a> </li>
-            <li class="work-photo" > <a> <img src="./img/img.box2.png" width="370" alt="Процес"> </a> </li>
-            <li class="work-photo" > <a> <img src="./img/img.box3.png" width="370" alt="Планшет"> </a> </li>
+        <ul class="photo-list list">
+            <li class="work-item" > <a class="procces-photo-link" > <img src="./img/img.box1.png" width="370" alt="Кодировка">  
+            <p class="procces-text-photo">Десктопные приложения</p>  </a>
+            </li>
+            
+            <li class="work-item" > <a> <img src="./img/img.box2.png" width="370" alt="Процес">          
+                <p class="procces-text-photo">Мобильные приложения</p></a>  
+            </li>
+
+            <li class="work-item" > <a> <img src="./img/img.box3.png" width="370" alt="Планшет">
+                <p class="procces-text-photo">Дизайнерские решения</p> </a>
+            </li>
+
         </ul>
         </div>
     </section>
@@ -396,6 +405,23 @@
 
 
 
+
+
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal" >
+        <button type="button " class="modal-close" data-modal-close>
+            <svg class="modal-close-icon" width="11" height="11" >
+                <use href="./img/symbol-defs.svg#icon-close" >
+
+                </use>
+            </svg>
+        </button>
+    </div>
+</div>
+
+
+
+<script src="./js/modal.js"></script>
 </body>
 
 </html>
