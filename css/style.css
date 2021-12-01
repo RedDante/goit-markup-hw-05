@@ -53,15 +53,61 @@ img {
   padding-right: 15px;
   margin: 0 auto;
 }
+/*--------------------------Backdrop----------------------*/
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+}
+
+.backdrop.is-hidden.modal {
+  transform: scale(1.5);
+  transition: transform 1000ms;
+}
+
+.modal {
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--main-title-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
 
 /*----------------------------------Фокус/Ховер-----------------------------------*/
-.pres:focus {
-  color: var(--six-color);
-}
 
-.drc:hover {
+/* .
   color: var(--six-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+ */
 /*-----------------------------------Header/Хедер--------------------------------*/
 .header {
   padding-top: 25px;
@@ -130,6 +176,13 @@ img {
   position: relative;
 }
 
+.header-link:hover,
+.header-link:focus {
+  border-radius: 2px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #2196f3;
+}
+
 .header-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -143,14 +196,13 @@ img {
   position: absolute;
   display: block;
   bottom: -31.5px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contact-list {
   margin-left: 200px;
 }
 
-.nav-right-item {
+.nav-right-link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -167,9 +219,10 @@ img {
   fill: currentColor;
 }
 
-.nav-right-item:hover,
-.nav-right-item:focus {
-  color: var(--second--text-color);
+.nav-right-link:hover,
+.nav-right-link:focus {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #2196f3;
 }
 
 /*-----------------------------------------------Hero------------------------------------*/
@@ -220,51 +273,6 @@ img {
   color: #ffffff;
   box-shadow: 0px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-}
-
-.backdrop {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: 0;
-  transition: opacity 500ms;
-}
-
-.modal {
-  width: 528px;
-  min-height: 581px;
-  background-color: var(--main-title-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: opacity 500ms, visibility 1000ms;
-  transition-property: ;
-}
-
-.modal-close {
-  width: 30px;
-  height: 30px;
-  background: #ffffff;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
 }
 
 /*-------------------------------------------------ЧТО МЫ ДЕЛАЕМ--------------------------------------------*/
@@ -324,6 +332,11 @@ img {
   color: var(--main-text-color);
 }
 /*------------------------------------------------Чем мы занимаемся--------------------------------------*/
+
+.procces-container {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 
 .procces {
   font-size: 36px;
@@ -466,6 +479,11 @@ img {
   fill: var(--main-title-color);
 }
 
+.mastert-social-link:hover,
+.master-social-link:focus {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /*--------------Company------------*/
 
 .our-company {
@@ -512,6 +530,11 @@ img {
   border-color: var(--second--text-color);
 }
 
+.company-link:hover,
+.company-link:focus {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /*---------------------------------------------Футер-----------------------------------------------*/
 .footer {
   background-color: var(--first-background-color);
@@ -531,16 +554,7 @@ img {
 
   color: var(--main-title-color);
 }
-.footer-mail {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-
-  color: var(--third--text--color);
-}
-
-.footer-phone {
+.footer-nav-link {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
@@ -568,6 +582,12 @@ img {
   letter-spacing: 0.03em;
 
   color: #ffffff;
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #2196f3;
 }
 
 .container-footer {
@@ -620,6 +640,7 @@ img {
 .social-box-link:hover,
 .social-box-link:focus {
   background-color: var(--second--text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*-----------------------------------------------------Portfolio----------------------------------------------------*/
@@ -647,6 +668,7 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button {
@@ -688,7 +710,6 @@ img {
 }
 
 .portfolio-main-text {
-  width: ;
   height: 294px;
   font-weight: 400;
   font-size: 18px;
